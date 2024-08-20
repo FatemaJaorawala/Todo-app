@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+  <title>Todo app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <main class="main-container">
+    <div class="title-container | s-b">
+      <h1 class="title fw-700">List</h1>
+      <button id="toggle-mode" class="light-mode" data-toggle-mode></button>
+    </div>
+
+    <section class="section-wrapper | br">
+      <form class="form" data-form>
+        <div class="primary-bg-color">
+          <button class="check-todo" type="submit" data-form-button></button>
+        </div>
+        <input type="text" class="todo-input | primary-bg-color fs-light" data-todo-input placeholder="Type your task...">
+      </form>
+
+      <div class="todos | box-shadow margin-block-400 primary-bg-color br">
+        <ul class="todo-list | primary-bg-color fs-light br" data-ul-list>
+        </ul>
+        <div class="s-b padding-block-400 fs-light padding-inline-400">
+          <span class="primary-text-color">
+            <span class="primary-text-color" data-items-left>...</span> items left
+          </span>
+          <button class="clear-completed | primary-text-color" data-button-clear-completed>clear completed</button>
+        </div>
+      </div>
+
+      <section class="section-option-buttons | box-shadow primary-bg-color padding-block-200 br">
+        <button class="option-button" data-button-all>To do's</button>
+        <button class="option-button" data-button-active>Active</button>
+        <button class="option-button" data-button-completed>Completed</button>
+      </section>
+
+    </section>
+
+  </main>
+  <div class="attribution" style="margin-top: 1rem;">  
+  </div>
+</body>
+</html>

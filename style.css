@@ -1,0 +1,368 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  /* primary colors */
+  --Bright-Blue: hsl(220, 98%, 61%);
+  --Check-Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+  --white: #fff;
+
+  /* dark theme */
+  --dark-bg-color: hsl(235, 21%, 11%);
+  --container-bg-dark-color: hsl(235, 24%, 19%);
+  --Light-Grayish-Blue: hsl(234, 39%, 85%);
+  --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+  --dark-text-color: hsl(234, 11%, 52%);
+  --Very-Dark-Grayish-Blue-dark-theme: hsl(233, 14%, 35%);
+  --primary-900: hsl(237, 14%, 26%);
+
+  /* light theme */
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+  --Light-Grayish-Blue: hsl(233, 11%, 84%);
+  --Dark-Grayish-Blue: hsl(236, 9%, 61%);
+  --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+
+  --ff: 'Josefin Sans', sans-serif;
+  --fs-light: .75rem;
+  --fw-light: 400;
+  --fw-regular: 700;
+}
+
+@media (min-width: 37.5em){
+  :root {
+    --fs-light: 1rem;
+  }
+}
+
+html {
+  --color: #fff;
+  --bg: hsl(235, 21%, 11%);
+  --bg-img: url('bg.jpg');
+  --border: rgba(255, 255, 255, 0.2);
+  --container-bg: hsl(235, 24%, 19%);
+  --color-text: hsl(234, 11%, 52%);
+  --border-bottom: hsl(237, 14%, 26%);
+}
+
+@media (min-width: 37.5em){
+  html {
+    --bg-img: url('bg.jpg')
+  }
+}
+
+html[data-theme='light'] {
+  --color: #000;
+  --bg: hsl(0, 0%, 98%);
+  --bg-img: url('bg.jpg');
+  --border: rgba(0, 0, 0, 0.1);
+  --container-bg: hsl(0, 0%, 98%);
+  --color-text: hsl(234, 11%, 52%);
+  --border-bottom: hsl(233, 11%, 84%);
+}
+
+@media (min-width: 37.5em){
+  html[data-theme="light"] {
+    --bg-img: url('bg.jpg')
+  }
+}
+
+body {
+  background-image: var(--bg-img);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: var(--bg);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: var(--ff);
+}
+
+@media (min-width: 37.5em){
+  body{
+    background-image: var(--bg-img);
+  }
+}
+
+/* global styles */
+.main-container {
+  width: min(100%, 35rem);
+  padding-inline: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-container {
+  margin-block: 2rem;
+}
+
+.section-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.remove-button {
+  margin-right: 1rem;
+  cursor: pointer;
+  width: .875rem;
+}
+
+/* utility classes */
+.br {
+  border-radius: .25rem;
+}
+
+.box-shadow {
+  box-shadow: 0px 20px 20px rgba(0, 0, 0, .1);
+}
+
+@media (min-width: 37.5em){
+  .box-shadow {
+    box-shadow: 0px 2rem 2rem rgba(0, 0, 0, .1);
+  }
+}
+
+.color {
+  color: var(--color);
+}
+
+.fs-light {
+  font-size: var(--fs-light);
+}
+
+.primary-bg-color {
+  background-color: var(--container-bg);
+}
+
+.t-center {
+  text-align: center;
+}
+
+.primary-text-color{
+  color: var(--color-text);
+}
+
+.margin-block-400 {
+  margin-block: 1.2rem;
+}
+
+.padding-block-200 {
+  padding: .5rem;
+}
+
+.padding-block-400 {
+  padding-block: 1.2rem;
+}
+
+.padding-inline-400 {
+  padding-inline: 1rem;
+}
+
+.a-center{
+  display: flex;
+  align-items: center;
+}
+
+.fw-400{
+  font-weight: 400;
+}
+
+.fw-700{
+  font-weight: 700;
+}
+
+.s-b{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.line-through {
+  text-decoration: line-through;
+  opacity: .5;
+}
+
+.section-option-buttons{
+  display: flex;
+  justify-content: center;
+}
+
+.option-button {
+  color: var(--color-text);
+  font-weight: var(--fw-regular);
+}
+
+.blue {
+  color: var(--Bright-Blue);
+}
+
+.option-button:hover{
+  color: var(--color);
+}
+
+.section-option-buttons > * + * {
+  margin-left: 1.25rem;
+}
+
+.title {
+  color: #fff;
+  font-size: 2em;
+  letter-spacing: .5rem;
+}
+
+.light-mode{
+  background-image: url('../images/icon-sun.svg');
+}
+
+#toggle-mode {
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding: 1.5rem;
+}
+
+.dark-mode {
+  background-image: url('../images/icon-moon.svg');
+}
+
+.check-todo {
+  position: relative;
+  /* background-image: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)); */
+  border-radius: 100%;
+  border: 1px solid var(--border);
+  padding: .6rem;
+  margin-inline: 1rem .5rem;
+}
+
+.background-image {
+  background-image: url('../images/icon-check.svg'), linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+}
+
+/* .check-todo:hover {
+  border-image: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)) 5%;
+} */
+
+.icon-check {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30%;
+}
+
+.clear-completed:hover{
+  color: var(--color);
+}
+
+/* The div element is not a valid child of the ul element, you should nest the div and buttons inside the li. */
+
+.todos {
+  border-radius: .25rem;
+}
+
+.todo-list {
+  list-style: none;
+}
+
+.todo-list > li {
+  border-bottom: 1px solid var(--border-bottom);
+  display: flex;
+}
+
+.form {
+  display: flex;
+}
+
+.form > div {
+  border-radius: .25rem 0rem 0rem .25rem;
+}
+
+.form > div > .check-todo{
+  margin-top: .8rem;
+  margin-inline: 1rem;
+}
+
+.todo-input {
+  width: 100%;
+  padding: 1.25em 0em;
+  border: 0;
+  outline: 0;
+  color: var(--color);
+  border-radius: 0rem .25rem .25rem 0rem;
+}
+
+.todo-text{
+  cursor: pointer;
+}
+
+.todo-input::placeholder{
+  color: var(--color);
+  opacity: .5;
+}
+
+.attribution { color: var(--color); font-size: 11px; text-align: center; }
+.attribution a { color: hsl(0, 82%, 50%); text-decoration: none;}
+.attribution a:hover {text-decoration: underline; }
